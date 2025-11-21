@@ -4,7 +4,6 @@
 
 Aplicación web interactiva desarrollada con **Python** y **Streamlit** que permite analizar datos de ventas de un supermercado, generar visualizaciones complejas y entrenar un modelo de machine learning para predecir ventas futuras. El proyecto implementa técnicas de análisis exploratorio de datos (EDA) y modelado predictivo con interfaz amigable para usuarios.
 
----
 
 ## Objetivos del Proyecto
 
@@ -14,7 +13,6 @@ Aplicación web interactiva desarrollada con **Python** y **Streamlit** que perm
 4. **Interfaz Web**: Crear aplicación interactiva con Streamlit
 5. **Evaluación del Modelo**: Calcular y mostrar métricas de desempeño
 
----
 
 ## Estructura del Proyecto
 
@@ -30,7 +28,6 @@ proyectoventas/
 └── README.md                       # documentación
 ```
 
----
 
 ## Tecnologías Utilizadas
 
@@ -44,7 +41,6 @@ proyectoventas/
 | **Scikit-learn** | Latest | Machine Learning |
 | **Python** | 3.7+ | Lenguaje base |
 
----
 
 ## Características Principales de la Aplicación
 
@@ -115,7 +111,6 @@ Interfaz interactiva para hacer predicciones:
 - **Botón**: "Predecir Venta"
 - **Resultado**: Venta predicha en tiempo real
 
----
 
 ##  Instalación y Ejecución
 
@@ -162,7 +157,6 @@ http://localhost:8501
 
 Si no se abre automáticamente, copia y pega la URL en tu navegador.
 
----
 
 ##  Flujo de Trabajo Completo
 
@@ -193,7 +187,6 @@ Si no se abre automáticamente, copia y pega la URL en tu navegador.
    └─ Mostrar predicción en interfaz
 ```
 
----
 
 ##  Dataset: Sample-Superstore
 
@@ -209,7 +202,6 @@ Si no se abre automáticamente, copia y pega la URL en tu navegador.
 - **Segment**: Segmento de cliente (Consumer, Corporate, Home Office)
 - **Product_ID**: Identificador único del producto
 
----
 
 ##  Métricas de Evaluación del Modelo
 
@@ -228,7 +220,6 @@ Si no se abre automáticamente, copia y pega la URL en tu navegador.
 - Significado: Penaliza más los errores grandes
 - Interpretación: Menor valor = mejor rendimiento
 
----
 
 ##  Archivo requirements.txt
 
@@ -242,7 +233,6 @@ seaborn>=0.11.0
 scikit-learn>=1.0.0
 ```
 
----
 
 ##  Configuración de la Aplicación
 
@@ -253,13 +243,9 @@ La aplicación está configurada en `app.py` con:
 - **Cache**: Habilitado para mejor rendimiento
 - **Codificación**: UTF-8 para caracteres especiales
 
----
 
----
+**Repositorio**: https://github.com/Gonzalo1221/mineria
 
-**Repositorio**: [Agregar URL del repositorio GitHub o Drive]
-
----
 
 ##  Troubleshooting (Solución de Problemas)
 
@@ -275,7 +261,6 @@ La aplicación está configurada en `app.py` con:
 ### Problema: "Los gráficos no se muestran"
 **Solución**: Verifica que Matplotlib y Seaborn estén instalados: `pip install matplotlib seaborn`
 
----
 
 ##  Notas Importantes
 
@@ -285,7 +270,6 @@ La aplicación está configurada en `app.py` con:
 - La interfaz es completamente responsiva
 - El archivo `.gitignore` excluye archivos innecesarios
 
----
 
 ##  Soporte
 
@@ -294,7 +278,3 @@ Para preguntas o problemas:
 2. Verifica que todas las dependencias estén instaladas
 3. Intenta ejecutar nuevamente el comando `streamlit run app.py`
 4. Contacta a los integrantes del grupo
-
----
-
-**Última Actualización**: 21 de Noviembre de 2025
