@@ -17,7 +17,7 @@ st.markdown('Aplicacion para analizar datos de ventas y hacer predicciones')
 # Cargar datos
 @st.cache_data
 def load_data():
-    df = pd.read_csv('C:/Users/Gonzalo01/Documents/Downloads/PPP/parcial/data/Sample-Superstore.csv', encoding='latin1')
+    df = pd.read_csv('./data/Sample-Superstore.csv', encoding='latin1')
     return df.drop_duplicates()
 
 df = load_data()
@@ -53,6 +53,67 @@ with tab2:
     st.subheader('Ventas por Region')
     ventas_region = df.groupby('Region')['Sales'].sum()
     st.bar_chart(ventas_region)
+
+    # Análisis por Categoría
+st.subheader('Ventas por Categoría')
+ventas_categoria = df.groupby('Category')['Sales'].sum().sort_values(ascending=False)
+fig, ax = plt.subplots(figsize=(10, 5))
+ventas_categoria.plot(kind='bar', color='steelblue', ax=ax)
+ax.set_title('Ventas por Categoría de Producto')
+ax.set_xlabel('Categoría')
+ax.set_ylabel('Ventas ($)')
+plt.xticks(rotation=45)
+st.pyplot(fig)
+
+# Análisis por Segmento de Cliente
+st.subheader('Distribución de Ventas por Segmento')
+ventas_segmento = df.groupby('Segment')['Sales'].sum()
+fig, ax = plt.subplots(figsize=(8, 6))
+colors = ['#FF9999', '#66B2FF', '#99FF99']
+wedges, texts, autotexts = ax.pie(ventas_segmento, labels=ventas_segmento.index, autopct='%1.1f%%', colors=colors, startangle=90)
+for autotext in autotexts:
+    autotext.set_color('white')
+    autotext.set_weight('bold')
+ax.set_title('Proporción de Ventas por Segmento')
+st.pyplot(fig)
+
+# Distribución de Descuentos
+st.subheader('Distribución de Descuentos Aplicados')
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.hist(df['Discount'] * 100, bins=20, color='coral', edgecolor='black')
+ax.set_title('Histograma de Descuentos')
+ax.set_xlabel('Descuento (%)')
+ax.set_ylabel('Frecuencia')
+st.pyplot(fig)
+
+# Top 5 Productos Más Rentables
+st.subheader('Top 5 Productos Más Rentables')
+top_productos = df.groupby('Product ID')['Profit'].sum().nlargest(5)
+fig, ax = plt.subplots(figsize=(10, 5))
+top_productos.plot(kind='barh', color='green', ax=ax)
+ax.set_title('Top 5 Productos Más Rentables')
+ax.set_xlabel('Ganancia ($)')
+st.pyplot(fig)
+
+# Ganancias por Región
+st.subheader('Ganancias por Región')
+ganancias_region = df.groupby('Region')['Profit'].sum().sort_values(ascending=False)
+fig, ax = plt.subplots(figsize=(10, 5))
+ganancias_region.plot(kind='bar', color='purple', ax=ax)
+ax.set_title('Ganancias Totales por Región')
+ax.set_xlabel('Región')
+ax.set_ylabel('Ganancia ($)')
+plt.xticks(rotation=45)
+st.pyplot(fig)
+
+# Matriz de Correlación
+st.subheader('Matriz de Correlación de Variables Numéricas')
+df_numeric = df[['Sales', 'Quantity', 'Discount', 'Profit']]
+corr_matrix = df_numeric.corr()
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', center=0, square=True, ax=ax, cbar_kws={'label': 'Correlación'})
+ax.set_title('Correlación entre Variables')
+st.pyplot(fig)
 
 # TAB 3: MODELO
 with tab3:
