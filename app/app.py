@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 
 # Configurar página
 st.set_page_config(page_title='Analisis Ventas', layout='wide')
-st.title('📊 Analisis y Prediccion de Ventas')
+st.title('Analisis y Prediccion de Ventas')
 st.markdown('Aplicacion para analizar datos de ventas y hacer predicciones')
 
 # Cargar datos

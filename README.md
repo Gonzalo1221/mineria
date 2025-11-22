@@ -17,7 +17,7 @@ Aplicación web interactiva desarrollada con **Python** y **Streamlit** que perm
 ## Estructura del Proyecto
 
 ```
-proyectoventas/
+parcial/
 ├── app.py                          # Aplicación principal (151 líneas)
 ├── data/
 │   └── Sample-Superstore.csv      # Dataset de ventas
