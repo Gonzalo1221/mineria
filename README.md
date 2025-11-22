@@ -245,6 +245,7 @@ La aplicación está configurada en `app.py` con:
 
 
 **Repositorio**: https://github.com/Gonzalo1221/mineria
+**Url Web**: https://mineriadev.streamlit.app/
 
 
 ##  Troubleshooting (Solución de Problemas)
